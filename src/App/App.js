@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react'
-
-const TILE_SIZE = 32
-const TILE_PALETTE = {
-  'default': '#e0e0e0',
-  'red': '#c04040',
-  'blue': '#4040c0',
-  'green': '#40c040',
-}
+import { TILE_PALETTE, TILE_SIZE } from '@app/constants.js'
+import MapTile from './MapTile.js'
 
 function App () {
   const [ mapWidth, setMapWidth ] = useState(5)
@@ -25,15 +19,22 @@ function App () {
     setMapTiles(newTiles)
   }, [mapWidth, mapHeight])
 
+  function paintTile(x, y) {
+    const newTiles = structuredClone(mapTiles)
+    newTiles[y][x] = 'red'
+    setMapTiles(newTiles)
+  }
+
   return (
     <main>
       <svg viewBox={`0 0 ${TILE_SIZE * 12} ${TILE_SIZE * 8}`}>
         {mapTiles.map((row, y) => (row.map((tile, x) => (
-          <rect
+          <MapTile
             key={`tile-${y}-${x}`}
-            x={x * TILE_SIZE} y={y * TILE_SIZE}
-            width={TILE_SIZE} height={TILE_SIZE}
-            fill={TILE_PALETTE[tile]}
+            x={x}
+            y={y}
+            tile={tile}
+            onClick={paintTile}
           />
         ))))}
       </svg>
