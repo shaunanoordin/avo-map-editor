@@ -1,5 +1,6 @@
 $white: #fff;
 $black: #000;
+$TILE_SIZE: 32px;
 
 * {
   box-sizing: border-box;
@@ -10,4 +11,48 @@ $black: #000;
   font-size: 16px;
   background: $white;
   color: $black;
+}
+
+#app {}
+
+#map {
+  height: 256px; // TILE_SIZE * 8
+
+  rect {
+    stroke: $white;
+    stroke-width: 1;
+    cursor: pointer;
+
+    &:hover {
+      stroke: $black;
+    }
+  }
+
+}
+
+#brush-controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+
+  li {
+    flex: 0 0 auto;
+    border: 2px solid $white;
+    padding: 0.1em;
+    margin: 0.1em;
+
+    &.selected {
+      border: 2px solid $black;
+    }
+  }
+
+  button {
+    display: block;
+    border: none;
+    cursor: pointer;
+    width: $TILE_SIZE;
+    height: $TILE_SIZE;
+  }
 }

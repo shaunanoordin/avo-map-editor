@@ -2,7 +2,6 @@ import React from 'react'
 import { TILE_PALETTE, TILE_SIZE } from '@app/constants.js'
 
 function MapTile ({ x, y, tile, onClick }) {
-
   function _onClick () {
     onClick(x, y)
   }
