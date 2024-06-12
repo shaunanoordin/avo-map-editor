@@ -1,0 +1,33 @@
+{
+  "name": "avo-map-editor",
+  "version": "1.0.0",
+  "description": "2D map editor",
+  "scripts": {
+    "start": "webpack && sass src:app && node server.js",
+    "dev": "concurrently \"webpack --watch\" \"sass --watch src:app\" \"node server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaunanoordin/avo-map-editor.git"
+  },
+  "author": "Shaun A. Noordin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaunanoordin/avo-map-editor/issues"
+  },
+  "homepage": "https://github.com/shaunanoordin/avo-map-editor#readme",
+  "dependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-loader": "^9.1.3",
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
+    "sass": "^1.77.5",
+    "webpack": "^5.92.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": ">= 20",
+    "npm": ">= 10"
+  }
+}

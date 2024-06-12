@@ -1,0 +1,13 @@
+$white: #fff;
+$black: #000;
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Tahoma", sans-serif;
+  font-size: 16px;
+  background: $white;
+  color: $black;
+}
