@@ -1,6 +1,8 @@
+import React from 'react'
+import { createRoot } from 'react-dom/client'
 import App from './app'
 
-var app
 window.onload = function() {
-  window.app = new App()
+  const app = createRoot(document.getElementById('app'))
+  app.render(<App />)
 }

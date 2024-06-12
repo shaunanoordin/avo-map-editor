@@ -1,5 +1,9 @@
-export default class App {
-  constructor () {
-    console.log('Hello world');
-  }
+import React from 'react'
+
+export default function App () {
+  return (
+    <main>
+      Hello world
+    </main>
+  )
 }
